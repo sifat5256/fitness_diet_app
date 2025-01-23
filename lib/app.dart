@@ -1,8 +1,9 @@
 import 'package:fitness_diet_app/app_controller.dart';
 import 'package:fitness_diet_app/moduels/diet/view/diet_screen.dart';
-import 'package:fitness_diet_app/moduels/home/view/home_screen.dart';
+
 import 'package:fitness_diet_app/moduels/profile/view/profile_screen.dart';
 import 'package:fitness_diet_app/moduels/report/view/report_screen.dart';
+import 'package:fitness_diet_app/moduels/reportt/view/reportt_screen.dart';
 import 'package:fitness_diet_app/utils/icon_path/icon_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,10 +17,11 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   final List<Widget> screens = [
-     HomeScreen(),
-    const DietScreen(),
     const ReportScreen(),
-    const ProfileScreen()
+    const DietScreen(),
+    ReporttScreen(),
+    const ProfileScreen(),
+
   ];
   final iconPaths = [
     AppIconPaths().homeIcon,

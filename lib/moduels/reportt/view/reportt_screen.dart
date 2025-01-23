@@ -1,11 +1,13 @@
-import 'package:fitness_diet_app/moduels/home/widget/cycling.dart';
-import 'package:fitness_diet_app/moduels/home/widget/excercise.dart';
-import 'package:fitness_diet_app/moduels/home/widget/heart_rate.dart';
-import 'package:fitness_diet_app/moduels/home/widget/sleep.dart';
-import 'package:fitness_diet_app/moduels/home/widget/walk.dart';
+
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+import '../widget/cycling.dart';
+import '../widget/excercise.dart';
+import '../widget/heart_rate.dart';
+import '../widget/sleep.dart';
+import '../widget/walk.dart';
+
+class ReporttScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

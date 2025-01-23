@@ -41,7 +41,7 @@ class HeightScreen extends StatelessWidget {
          ),
           Spacer(),
           CustomButton(
-              text: "Got to home",
+              text: "Got to reportt",
               onTap: (){
                 Get.to(App());
 
