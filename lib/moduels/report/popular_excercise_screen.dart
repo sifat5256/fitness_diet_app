@@ -1,118 +1,37 @@
-import 'package:fitness_diet_app/moduels/report/popular_excercise_screen.dart';
+
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MainHomeScreen extends StatefulWidget {
-  const MainHomeScreen({super.key});
+import 'view/single_excercise_screen.dart';
+
+class PopularExcerciseScreen extends StatefulWidget {
+  const PopularExcerciseScreen({super.key});
 
   @override
-  State<MainHomeScreen> createState() => _MainHomeScreenState();
+  State<PopularExcerciseScreen> createState() => _PopularExcerciseScreenState();
 }
 
-class _MainHomeScreenState extends State<MainHomeScreen> {
+class _PopularExcerciseScreenState extends State<PopularExcerciseScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(left: 10,right: 8),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 10,),
-          Container(
-          height: 60,
-          decoration: BoxDecoration(
-            color: Colors.grey[100],
-            borderRadius: BorderRadius.circular(12),
-
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            child: Center(
-              child: TextFormField(
-                decoration: InputDecoration(
-                  hintText: "Search",
-                  border: InputBorder.none,
-                  prefixIcon: Icon(Icons.search,color: Colors.grey[500]
-                    ,),
-                ),
-              ),
-            ),
-          ),
-        ),
-            const SizedBox(height: 15,),
-            const Text("Recent activity",style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold
-            ),),
-            const SizedBox(height: 10,),
-            SizedBox(
-              height: 180,
-              child: Row(
-                children: [
-
-                  Expanded(
-                    child: Container(
-
-                      decoration: BoxDecoration(
-                        color: Colors.orange.shade200,
-                        borderRadius: BorderRadius.circular(18),
-
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Expanded(
-                    child: Container(
-
-                      decoration: BoxDecoration(
-                        color: Colors.blue.shade200,
-                        borderRadius: BorderRadius.circular(18),
-
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 15,),
-             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text("Popular excercise",style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold
-                ),),
-                GestureDetector(
-                  onTap: (){
-                    Get.to(const PopularExcerciseScreen());
-
-                  },
-
-                  child: const Text("View all",style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.normal,
-                    color: Colors.blue
-                  ),),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            SizedBox(
-              height: 170,
-              child: ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: 10,
-                itemBuilder: (context, index) {
+      appBar: AppBar(
+        title: const Text("Popular Excercise"),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: 20,
+                itemBuilder: (context,index){
+            
                   return Padding(
-                    padding: const EdgeInsets.only(right: 10),
+                    padding: const EdgeInsets.all(10),
                     child: Container(
-                      height: MediaQuery.of(context).size.height * 0.3,
+                      height: MediaQuery.of(context).size.height * 0.19,
                       width: MediaQuery.of(context).size.width * 0.7,
                       decoration: BoxDecoration(
                         color: Colors.blue.shade100,
@@ -134,6 +53,9 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
                                   const Row(
                                     children: [
                                       Icon(Icons.timelapse, color: Colors.grey),
@@ -151,7 +73,9 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                                   ),
                                   const SizedBox(height: 10),
                                   GestureDetector(
-                                    onTap: () {},
+                                    onTap: () {
+                                      Get.to(const SingleExcerciseScreen());
+                                    },
                                     child: Padding(
                                       padding: const EdgeInsets.symmetric(horizontal: 25.0),
                                       child: Material(
@@ -195,14 +119,11 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                       ),
                     ),
                   );
-                },
-              ),
-            ),
+                }),
+          )
+          
 
-
-
-          ],
-        ),
+        ],
       ),
     );
   }

@@ -17,8 +17,8 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   final List<Widget> screens = [
-    const ReportScreen(),
-    const DietScreen(),
+    const MainHomeScreen(),
+     DietScreen(),
     ReporttScreen(),
     const ProfileScreen(),
 
@@ -43,10 +43,11 @@ class _AppState extends State<App> {
             child: Icon(Icons.notification_important_rounded,size: 24,color: Colors.blueAccent,),
           )
         ],
-        leading: const Padding(
-          padding: EdgeInsets.only(left: 5),
+        leading:  Padding(
+          padding: const EdgeInsets.only(left: 5),
           child: CircleAvatar(
-            child: Icon(Icons.person_outline),
+            backgroundColor: Colors.transparent,
+            child: Image.asset("lib/utils/assets/images/boy (1).png",height: 50,),
           ),
         ),
         title: const Row(
